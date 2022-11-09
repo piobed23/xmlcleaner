@@ -9,15 +9,15 @@ namespace xmlcleaner
         static void Main(string[] args)
         {
             XmlDocument xmlDocument = new XmlDocument();  
-            xmlDocument.Load("LPLA00001.xml");
+            xmlDocument.Load("L.xml");
 
-            XmlNodeList allElements = xmlDocument.GetElementsByTagName("ListaPlac"); 
+            XmlNodeList allElements = xmlDocument.GetElementsByTagName("Li"); 
             Console.WriteLine(allElements.Count);
 
             for (int i = allElements.Count - 1; i >= 0; i--)
             {
                 var node = allElements[i];
-                var nodeWyplaty = node["Wyplaty"].ChildNodes;
+                var nodeWyplaty = node["Wy"].ChildNodes;
                
                 if (nodeWyplaty.Count == 0)
                 {                    
@@ -25,7 +25,7 @@ namespace xmlcleaner
                 }
             }
            
-            xmlDocument.Save("LPLA00001-kopiaa.xml");
+            xmlDocument.Save("Lkopiaa.xml");
 
             Console.ReadLine();
         }
